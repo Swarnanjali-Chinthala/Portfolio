@@ -1,0 +1,9 @@
+.footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #d1d5db;
+}
+
+.dark .footer {
+  border-color: #4b5563;
+}

@@ -1,0 +1,28 @@
+.projects {
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 2rem;
+}
+
+.projects h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+body.dark .project-card {
+  background: #222;
+  color: #f1f1f1;
+}
