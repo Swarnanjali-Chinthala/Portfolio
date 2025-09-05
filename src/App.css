@@ -1,29 +1,46 @@
 body {
-  background-color: #f3f4f6;
-  color: #111827;
+  margin: 0;
+  background-color: #060426; /* Dark theme */
+  color: #f9fafb;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* disable global scroll */
 }
 
-.dark body {
-  background-color: #1f2937;
-  color: #f9fafb;
-}
-/* Make the entire app take full viewport height and stack children vertically */
 .app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
 }
 
-/* Make main content grow to fill available space */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+  background: #060426;
+  color: #f9fafb;
+  border-bottom: 1px solid #2d2d54;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+  background: #060426;
+  color: #f9fafb;
+  border-top: 1px solid #2d2d54;
+}
+
 .main-content {
   flex: 1;
-}
-
-/* Optional: style the footer */
-footer {
-  text-align: center;
+  margin-top: 70px;  /* push below navbar */
+  margin-bottom: 60px; /* push above footer */
+  overflow-y: auto;   /* scroll only here */
   padding: 1rem;
-  border-top: 1px solid #ddd;
-  
 }
-

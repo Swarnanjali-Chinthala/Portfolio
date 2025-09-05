@@ -2,49 +2,40 @@
   padding: 2rem;
   max-width: 96rem;
   margin: 0 auto;
+  text-align: center;
 }
 
 .portfolio h2 {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.projects-grid {
+/* Default: 1 card per row */
+.project-grid {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
+  justify-items: center; /* center cards in row */
 }
 
+/* Medium screens (tablet) → 2 per row */
 @media (min-width: 768px) {
-  .projects-grid {
+  .project-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Large screens (desktop) → 3 per row */
 @media (min-width: 1024px) {
-  .projects-grid {
+  .project-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.project-card {
-  background: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  padding: 1.5rem;
-}
-
-.dark .project-card {
-  background: #374151;
-}
-
-.project-card h3 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.project-card a {
-  color: #4f46e5;
-  text-decoration: underline;
+/* Extra large screens → 4 per row */
+@media (min-width: 1440px) {
+  .project-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
