@@ -23,13 +23,15 @@ export default function Navbar() {
         <Link to="/projects" onClick={() => setIsOpen(false)}>Projects</Link>
         <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
         <a
-          href="C:\Users\Nxtwa\OneDrive\Desktop\SWARNANJALICHINTHALARESUME.pdf"
-          download="Swarnanjali_Resume.pdf"
+          href="https://drive.google.com/file/d/1Mokhv7tS4f0Q_9SepaJcxyR3ao6iGGo_/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
           className="resume-download"
-          title="Download Resume"
+          title="View Resume"
         >
           <Download size={20} />
         </a>
+
       </div>
     </nav>
   );
