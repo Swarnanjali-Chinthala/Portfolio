@@ -1,9 +1,18 @@
+/* 🌐 Theme Variables */
+:root {
+  --primary: #111827;   /* Dark Charcoal */
+  --secondary: #374151; /* Cool Gray */
+  --accent: #06B6D4;    /* Cyan */
+  --highlight: #A3E635; /* Lime Green */
+  --text: #F9FAFB;      /* White */
+}
+
 /* Reset & Base */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #060426;
-  color: #f9fafb;
+  background-color: var(--primary);
+  color: var(--text);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,31 +27,17 @@ body {
 
 .main-content {
   flex: 1;
-  margin-top: 70px;
-  margin-bottom: 60px;
+  margin-top: 70px;   /* below navbar */
+  margin-bottom: 60px; /* above footer */
   overflow-y: auto;
   padding: 1rem;
 }
 
-/* Footer */
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 20px;
-  background: #060426;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 1px solid #2d2d54;
-  color: #f9fafb;
-}
-
-/* Buttons & Project Links */
-.project-link,
-button {
-  background: #4f46e5;
-  color: white;
+/* Common button/link styles */
+button,
+.project-link {
+  background: var(--accent);
+  color: var(--text);
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -51,7 +46,7 @@ button {
   transition: background 0.3s ease;
 }
 
-.project-link:hover
-{
-  background: #3730a3;
+button:hover,
+.project-link:hover {
+  background: var(--secondary);
 }

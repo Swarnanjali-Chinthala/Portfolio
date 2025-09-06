@@ -3,29 +3,60 @@
   margin: 2rem auto;
   padding: 0 1rem;
   line-height: 1.7;
- 
+  color: var(--text);
 }
 
+/* ================= Headings ================= */
 .about h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: var(--highlight);
+  animation: fadeInDown 1s ease-in-out forwards, glow-strong 2s ease-in-out 1s;
+  opacity: 0;
 }
 
 .about h3 {
   margin-top: 2rem;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  color: var(--accent);
+  position: relative;
+  animation: fadeInLeft 1s ease-in-out forwards, glow 2s ease-in-out 1.2s;
+  opacity: 0;
+}
+
+.about h3::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--accent);
+  transition: width 0.4s ease-in-out;
+}
+
+.about h3:hover::after {
+  width: 100%;
 }
 
 .about h4 {
   margin-top: 1rem;
   font-size: 1.2rem;
+  color: var(--highlight);
+  animation: fadeInRight 1s ease-in-out forwards;
+  opacity: 0;
 }
 
+/* ================= Intro ================= */
 .about-intro p {
   font-size: 1.1rem;
+  animation: scaleIn 1.2s ease-in-out forwards;
+  opacity: 0;
+  transform-origin: center;
 }
 
+/* ================= Lists ================= */
 .about-experience ul,
 .about-education ul,
 .about-achievements ul {
@@ -37,8 +68,91 @@
 .about-education li,
 .about-achievements li {
   margin-bottom: 0.8rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-in-out forwards;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.edu-year {
-  font-size: 0.9rem;
+/* Hover lift effect */
+.about-experience li:hover,
+.about-education li:hover,
+.about-achievements li:hover {
+  transform: translateX(5px);
+  color: var(--accent);
+}
+
+/* Staggered delays */
+.about-experience li:nth-child(1) { animation-delay: 0.3s; }
+.about-experience li:nth-child(2) { animation-delay: 0.5s; }
+.about-experience li:nth-child(3) { animation-delay: 0.7s; }
+.about-experience li:nth-child(4) { animation-delay: 0.9s; }
+.about-experience li:nth-child(5) { animation-delay: 1.1s; }
+
+.about-education li:nth-child(1) { animation-delay: 0.3s; }
+.about-education li:nth-child(2) { animation-delay: 0.5s; }
+.about-education li:nth-child(3) { animation-delay: 0.7s; }
+
+.about-achievements li:nth-child(1) { animation-delay: 0.3s; }
+.about-achievements li:nth-child(2) { animation-delay: 0.5s; }
+.about-achievements li:nth-child(3) { animation-delay: 0.7s; }
+
+/* ================= Keyframes ================= */
+@keyframes fadeInDown {
+  0% { transform: translateY(-30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInLeft {
+  0% { transform: translateX(-30px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInRight {
+  0% { transform: translateX(30px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 0px transparent; }
+  50% { text-shadow: 0 0 10px var(--highlight); }
+  100% { text-shadow: 0 0 0px transparent; }
+}
+
+@keyframes glow-strong {
+  0% { text-shadow: 0 0 0px transparent; }
+  50% { text-shadow: 0 0 15px var(--highlight), 0 0 25px var(--highlight); }
+  100% { text-shadow: 0 0 0px transparent; }
+}
+
+/* ================= Scroll Reveal ================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-in-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.active h2,
+.reveal.active h3,
+.reveal.active h4 {
+  animation: glow 1.5s ease-in-out;
+}
+.about h2,
+.about h3,
+.about h4 {
+  opacity: 1; /* make sure they always show */
 }

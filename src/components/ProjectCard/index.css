@@ -2,21 +2,24 @@
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 10px; /* ensures at least 5px gap between cards */
+  gap: 10px;
 }
 
+/* Card Animation */
 .project-card {
   background: #ffffff; /* light background */
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   padding: 16px;
-  
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUpCard 0.8s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
 /* Card Content */
@@ -24,7 +27,9 @@
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 8px;
-  color: #111; /* darker text inside white card */
+  color: #111;
+  animation: fadeInText 0.8s ease forwards;
+  opacity: 0;
 }
 
 .project-desc {
@@ -32,6 +37,9 @@
   font-size: 14px;
   color: #333;
   line-height: 1.4;
+  animation: fadeInText 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
 }
 
 /* More Link */
@@ -40,8 +48,28 @@
   color: #4f46e5;
   text-decoration: underline;
   cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.5s ease;
 }
 
 .more-link:hover {
   color: #3730a3;
+  text-shadow: 0 0 8px #4f46e5, 0 0 16px #06b6d4; /* subtle glow on hover */
 }
+
+/* ================= Keyframes ================= */
+@keyframes fadeInUpCard {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Optional: stagger effect for multiple cards */
+.project-grid .project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-grid .project-card:nth-child(2) { animation-delay: 0.3s; }
+.project-grid .project-card:nth-child(3) { animation-delay: 0.5s; }
+.project-grid .project-card:nth-child(4) { animation-delay: 0.7s; }
+.project-grid .project-card:nth-child(5) { animation-delay: 0.9s; }

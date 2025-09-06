@@ -1,11 +1,30 @@
-import './index.css';
+import { useEffect } from "react";
+import "./index.css";
 
 export default function About() {
+  useEffect(() => {
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target); // run only once
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    reveals.forEach((el) => observer.observe(el));
+  }, []);
+
   return (
     <main className="about">
-      <h2>About Me</h2>
+      <h2 className="reveal">About Me</h2>
 
-      <section className="about-intro">
+      <section className="about-intro reveal">
         <p>
           I’m Swarnanjali, a passionate MERN Stack Developer and dedicated software development mentor.
           Over the years, I’ve guided and trained hundreds of aspiring developers to master the MERN stack,
@@ -14,22 +33,22 @@ export default function About() {
         </p>
       </section>
 
-      <section className="about-experience">
+      <section className="about-experience reveal">
         <h3>Work Experience</h3>
         <h4>NXT Wave, Hyderabad</h4>
         <p><strong>Associate Software Developer | Academic Mentor</strong></p>
         <ul>
-          <li>Developed a full-stack web application to analyze interview videos by generating transcripts and computing performance scores using predefined evaluation metrics.</li>
-          <li>Designed a React-based frontend for video uploads and result display, providing a seamless user experience and real-time feedback.</li>
-          <li>Implemented a Node.js backend with Express and Multer to handle large video uploads and integrated Assembly AI/OpenAI Whisper for accurate transcription.</li>
-          <li>Engineered a custom scoring engine to assess transcript content based on clarity, confidence, and response relevance.</li>
-          <li>Enabled scalable processing and future integration of advanced NLP/ML techniques through a modular backend architecture.</li>
-          <li><strong>Technologies:</strong> React, Node.js, Express, Multer, Assembly AI, Whisper, MongoDB, Axios, JavaScript, HTML/CSS</li>
-          <li>Additionally, mentored aspiring developers — translating complex technical concepts into clear, practical guidance across Python, JavaScript, Node.js, SQL, and more.</li>
+          <li>Developed a full-stack web application to analyze interview videos...</li>
+          <li>Designed a React-based frontend for video uploads...</li>
+          <li>Implemented a Node.js backend with Express and Multer...</li>
+          <li>Engineered a custom scoring engine...</li>
+          <li>Enabled scalable processing...</li>
+          <li><strong>Technologies:</strong> React, Node.js, Express, Multer...</li>
+          <li>Additionally, mentored aspiring developers...</li>
         </ul>
       </section>
 
-      <section className="about-education">
+      <section className="about-education reveal">
         <h3>Education</h3>
         <ul>
           <li>
@@ -50,12 +69,12 @@ export default function About() {
         </ul>
       </section>
 
-      <section className="about-achievements">
+      <section className="about-achievements reveal">
         <h3>Key Achievements</h3>
         <ul>
-          <li>Successfully mentored 100+ students in MERN stack, Python, and DSA basics.</li>
+          <li>Successfully mentored 100+ students in MERN stack...</li>
           <li>Designed and delivered practical, project-based training programs.</li>
-          <li>Helped students build real-world web applications and prepare for technical interviews.</li>
+          <li>Helped students build real-world web applications...</li>
         </ul>
       </section>
     </main>

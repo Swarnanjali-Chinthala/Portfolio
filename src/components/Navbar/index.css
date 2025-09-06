@@ -2,81 +2,96 @@
   position: fixed;
   top: 0;
   width: 100%;
-  height: 70px;
+  height: 50px;
   z-index: 1000;
-  background: #060426;
+  background: var(--primary);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #2d2d54;
-  
+  border-bottom: 1px solid var(--secondary);
+  padding: 1rem 1.5rem;
 }
 
-/* Title */
 .navbar-title a {
-  color: #f9fafb;
+  color: var(--text);
   text-decoration: none;
   font-size: 1.5rem;
-  margin-left: 20px;
+  font-weight: bold;
 }
 
-/* Links */
-.navbar-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.navbar-links a {
-  color: #f9fafb;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.navbar-links a:hover {
-  color: #c7d2fe;
-}
-
-/* Hamburger */
 .navbar-hamburger {
-  font-size: 2rem;
   background: none;
   border: none;
+  color: var(--text);
+  font-size: 1.8rem;
   cursor: pointer;
-  color: #f9fafb;
   display: none;
-  margin-right: 20px; /* hidden by default */
+  margin-right: 25px;
 }
 
-/* ✅ Media Queries */
+/* Desktop */
 @media (min-width: 769px) {
   .navbar-links {
     display: flex;
+    align-items: center;
+    gap: 1rem;
   }
+
   .navbar-hamburger {
     display: none;
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
+  .navbar-hamburger {
+    display: block;
+  }
+
   .navbar-links {
-    display: none; /* hidden until toggled */
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
     top: 70px;
     right: 1.5rem;
-    background: #111827;
+    background: var(--primary);
     padding: 1rem;
-    border: 1px solid #2d2d54;
-    border-radius: 8px;
+    border: 1px solid var(--secondary);
+    border-radius: 0.375rem;
+    z-index: 999;
     width: 200px;
   }
 
   .navbar-links.open {
     display: flex;
   }
+}
 
-  .navbar-hamburger {
-    display: block; /* visible only on mobile */
-  }
+.navbar-links a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--accent);
+}
+
+.resume-download {
+  margin-left: 1rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+  margin-right: 40px;
+}
+
+.resume-download:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--highlight);
 }

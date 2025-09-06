@@ -16,7 +16,7 @@ export default function Home() {
           beautiful, responsive web applications. I enjoy solving complex problems, writing clean code, and constantly
           exploring new technologies to create modern user experiences. If you’d like to know more about my background,
           skills, and journey,&nbsp;
-          <Link to="/about" className="about-link">click here</Link>.
+          <Link to="/about" className="about-link"><a href="#projects" className="click-here">Click Here</a></Link>.
         </p>
       </div>
     </main>

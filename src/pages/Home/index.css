@@ -18,29 +18,76 @@
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1.5rem;
-  /* Animation */
-  animation: fadeInUp 1.5s ease-out forwards;
+  border: 3px solid var(--accent);
+  animation: floatUp 1.8s ease-out forwards, glowUp 2s ease-in-out 1.8s;
   opacity: 0;
 }
 
+/* One-time glow effect */
+@keyframes glowUp {
+  0% { box-shadow: 0 0 0px var(--accent); }
+  50% { box-shadow: 0 0 25px var(--accent), 0 0 50px var(--highlight); }
+  100% { box-shadow: 0 0 0px var(--accent); }
+}
+
+/* 👤 Your name (Swarnanjali) - keep glowing infinitely */
+.navbar-title a {
+  color: var(--highlight);
+  animation: glowInfinite 2s ease-in-out infinite alternate;
+}
+
+/* 👋 Welcome Heading - glow only for 2s */
 h1 {
   font-size: 2.5rem;
-  
+  color: var(--highlight);
+  animation: fadeInDown 1s ease-in-out forwards, glowOnce 2s ease-in-out 1s;
+  opacity: 0;
 }
 
+/* ✨ Click here link - glow after 6s continuously */
+.click-here {
+  color: var(--accent);
+  font-weight: bold;
+  animation: glowCyan 1.5s ease-in-out infinite alternate;
+  animation-delay: 6s; /* starts glowing after 6s */
+}
+
+/* General text */
 p {
   font-size: 1.1rem;
-  
+  color: var(--text);
 }
 
-/* Animation keyframes */
+/* ================== Keyframes ================== */
 @keyframes fadeInUp {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Glow once */
+@keyframes glowOnce {
+  0%   { text-shadow: 0 0 0px transparent; }
+  50%  { text-shadow: 0 0 12px var(--highlight); }
+  100% { text-shadow: 0 0 0px transparent; }
+}
+
+/* Infinite glowing for name */
+@keyframes glowInfinite {
+  from { text-shadow: 0 0 5px var(--highlight), 0 0 10px var(--highlight); }
+  to   { text-shadow: 0 0 15px var(--highlight), 0 0 25px var(--highlight); }
+}
+
+/* Cyan glowing link */
+@keyframes glowCyan {
+  from { text-shadow: 0 0 5px #06b6d4, 0 0 10px #06b6d4; }
+  to   { text-shadow: 0 0 20px #06b6d4, 0 0 30px #06b6d4; }
+}
+@keyframes floatUp {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
