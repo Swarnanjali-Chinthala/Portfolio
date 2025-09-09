@@ -12,6 +12,8 @@ export default function ProjectDetails() {
   return (
     <div className="project-details">
   <h2>{project.title}</h2>
+  <strong>Objective:</strong>
+      <p>{project.objective}</p>
 
   <strong>Description:</strong>
   <p>{project.summary}</p>

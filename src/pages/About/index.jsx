@@ -35,17 +35,20 @@ export default function About() {
 
       <section className="about-experience reveal">
         <h3>Work Experience</h3>
-        <h4>NXT Wave, Hyderabad</h4>
-        <p><strong>Associate Software Developer | Academic Mentor</strong></p>
+        <h4>NXTWave, Hyderabad</h4>
+        <p><strong>Software Development Mentor</strong></p>
+        <h5>NxtWave Portal – Student Profile Page</h5>
+        <p><strong>Frontend Developer | NxtWave, Hyderabad | July 2024 – Present</strong></p>
         <ul>
-          <li>Developed a full-stack web application to analyze interview videos...</li>
-          <li>Designed a React-based frontend for video uploads...</li>
-          <li>Implemented a Node.js backend with Express and Multer...</li>
-          <li>Engineered a custom scoring engine...</li>
-          <li>Enabled scalable processing...</li>
-          <li><strong>Technologies:</strong> React, Node.js, Express, Multer...</li>
-          <li>Additionally, mentored aspiring developers...</li>
+          <li>Developed a responsive student profile page using React.js and Styled Components.</li>
+          <li>Built modular components for displaying personal, academic, and project information.</li>
+          <li>Ensured cross-device compatibility and followed best practices in component architecture.</li>
         </ul>
+        <p>
+          Additionally, mentoring aspiring developers. Skilled in full-stack development using technologies like
+          Python, JavaScript, Node.js, SQL, and React.js. Proven ability to translate complex technical concepts into
+          easy-to-understand guidance while supporting learners in multiple programming languages and tools.
+        </p>
       </section>
 
       <section className="about-education reveal">

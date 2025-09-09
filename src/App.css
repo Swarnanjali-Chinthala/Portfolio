@@ -40,7 +40,8 @@ body {
 .main-content {
   flex: 1;
   margin-top: 70px;  /* push below navbar */
-  margin-bottom: 60px; /* push above footer */
+  margin-bottom: 150px; /* push above footer */
   overflow-y: auto;   /* scroll only here */
   padding: 1rem;
+
 }
