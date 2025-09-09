@@ -1,7 +1,7 @@
 const projects = [
   {
   id: 1,
-  title: "NextWatch (YouTube Clone)",
+  title: "NextWatch",
   objective:
     "To replicate core YouTube functionalities such as video streaming, trending, and saved videos, while practicing authentication, theme management, and responsive layouts in React.",
   summary:
@@ -16,7 +16,7 @@ const projects = [
     "⚡ Graceful loaders, error handling, and retry option",
     "📱 Responsive layout with collapsible sidebar on mobile devices"
   ],
-  link: "https://next-watch-six.vercel.app/login"
+  link: "https://next-watch-six.vercel.app/"
 }
 
 ,
@@ -91,18 +91,22 @@ const projects = [
 ,
 {
   id: 6,
-  title: "Appointment Application",
-  objective: "To develop a responsive and user-friendly frontend for an appointment booking system, providing a seamless user experience across devices.",
+  title: "Money Manager",
+  objective:
+    "To build a simple yet effective personal finance tracker using HTML, CSS, and JavaScript that helps users manage income and expenses.",
   summary:
-    "The Appointment Application is a React-based frontend designed for scheduling appointments. It features a clean and intuitive interface, ensuring users can easily navigate and book appointments. The application is built using Vite, offering fast development and build processes.",
+    "Money Manager is a browser-based web application that allows users to track their balance, income, and expenses. Users can add transactions by specifying a title, amount, and type (Income/Expense). The application dynamically updates totals and maintains a transaction history in a clean, responsive UI.",
   features: [
-    "📱 Responsive design for optimal viewing on all devices",
-    "⚙️ Modular React components for maintainability and scalability",
-    "🚀 Fast development setup using Vite with hot module replacement",
-    "🎨 Clean UI/UX with focus on smooth interactions",
+    "💰 Track current balance, income, and expenses in real-time",
+    "➕ Add transactions with title, amount, and type",
+    "📜 Maintain a transaction history list",
+    "🔄 Automatic calculation of balance when new transactions are added",
+    "🎨 Built with HTML, CSS, and JavaScript (no frameworks)",
+    "📱 Responsive design for desktop and mobile"
   ],
-  link: "https://appointment-application-brown.vercel.app/",
+  link: "https://nxtasign2swarna.ccbp.tech/"
 }
+
 
 ,
   {
