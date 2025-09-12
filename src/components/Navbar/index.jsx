@@ -23,7 +23,7 @@ export default function Navbar() {
         <Link to="/projects" onClick={() => setIsOpen(false)}>Projects</Link>
         <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
         <a
-          href="https://drive.google.com/file/d/1Mokhv7tS4f0Q_9SepaJcxyR3ao6iGGo_/view?usp=sharing"
+          href="https://drive.google.com/file/d/1aJo6ksEacRPwqKzLiVuKp35DzH7u8CtZ/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="resume-download"

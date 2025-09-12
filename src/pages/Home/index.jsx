@@ -12,10 +12,7 @@ export default function Home() {
         />
         <h1>Welcome to My Portfolio</h1>
         <p>
-          Hi, I'm Swarnanjali — a passionate and dedicated MERN stack developer who loves transforming ideas into
-          beautiful, responsive web applications. I enjoy solving complex problems, writing clean code, and constantly
-          exploring new technologies to create modern user experiences. If you’d like to know more about my background,
-          skills, and journey,&nbsp;
+          Hi, I'm Swarnanjali — a passionate and dedicated React developer who specializes in building dynamic, responsive, and user-friendly web applications. I love crafting seamless user experiences with clean, efficient code, and I'm always exploring the latest in React and front-end technologies to stay ahead. If you’d like to know more about my background, skills, and journey, feel free to connect!,&nbsp;
           <Link to="/about" className="about-link"><a href="#projects" className="click-here">Click Here</a></Link>.
         </p>
       </div>

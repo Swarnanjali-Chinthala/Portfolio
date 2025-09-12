@@ -23,6 +23,7 @@ const projects = [
   {
   id: 2,
   title: "Jobby App – Job Search Platform",
+  objective:"To design and develop a responsive and user-friendly job search platform using React, enabling users to securely log in, search for jobs, apply filters, and view detailed job information. The goal was to create a seamless job discovery experience with robust routing, dynamic content handling, and clean UI/UX.",
   summary:
     "Jobby App is a React-based job search platform featuring secure login, job listings with filters, and detailed job descriptions. It helps users explore jobs efficiently with a clean and responsive interface.",
   features: [
